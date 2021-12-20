@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Metodo Delete</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button  expand="block" [routerLink]="['/']">
+    Volver!
+  </ion-button>
+  <br>
+  <form [formGroup]="loginForm" (ngSubmit)="borraUsuario(loginForm.value)">
+    <ion-label for="idUsuarioI">ID del Usuario</ion-label>
+    <ion-input type="number" id="idUsuarioI" min="1" formControlName="idUsuario" placeholder="Ingresar ID del usuario"></ion-input>
+    <br>
+    <ion-button type="submit" color="danger" value="Borrar Usuario">Borrar Usuario</ion-button>
+  </form>
+  <br>
+  <div class="alert alert-danger" *ngIf="errorVerificacion">
+    <p class="alerta">{{mensajeError}}</p>
+  </div>
+</ion-content>
